@@ -1,3 +1,5 @@
+import Base "mo:base/Prelude";
+
 actor class Backend() {
   stable var counter = 0;
 
@@ -19,5 +21,5 @@ actor class Backend() {
   public func sayhello(word : Text) : async Text {
     let hello : Text = "Hello" # word;
     return hello;
-  }
+  };
 };
