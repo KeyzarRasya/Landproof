@@ -15,4 +15,9 @@ actor class Backend() {
   public func add(n : Nat) : async () {
     counter += n;
   };
+
+  public func sayhello(word : Text) : async Text {
+    let hello : Text = "Hello" # word;
+    return hello;
+  }
 };

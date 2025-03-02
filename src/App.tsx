@@ -10,6 +10,11 @@ function App() {
     functionName: 'get',
   });
 
+  const { data : greet, refetch:refetchName} = useQueryCall({
+    functionName:'sayhello',
+    args:['Keyzar']
+  })
+
   const { call: increment, loading } = useUpdateCall({
     functionName: 'inc',
     onSuccess: refetch,
@@ -44,7 +49,7 @@ function App() {
           count is {count?.toString() ?? 'loading...'}
         </button>
         <p>
-          Edit <code>backend/Backend.mo</code> and save to test HMR
+          Edit <code>{greet as string}</code> and save to test HMR
         </p>
       </div>
       <p className="read-the-docs">
